@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GiveHope &mdash; Website Template by Colorlib</title>
+    <title>Zone 7 Digital Vouchers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -51,7 +51,7 @@
                         <div class="categories">
                             <h3>Categories</h3>
                             <li><a href="#" onclick="OnROB()">Riding own Bike <span>(10)</span></a></li>
-                            <li><a href="#">Gokart Rental <span>(30)</span></a></li>
+                            <li><a href="#"onclick="OnGocart()">Gokart Rental <span>(30)</span></a></li>
                             <li><a href="#">Quad Rental <span>(18)</span></a></li>
                         </div>
                     </div>
@@ -81,11 +81,16 @@
     <script src="js/aos.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/main.js"></script>
+
     <script>
         function OnROB()
         {
             window.location.href = "/Home/GetEdit?Id=" + "ROB";
         }
+        function OnGocart() {
+            window.location.href = "/Home/GetEdit?Id=" + "Gocart";
+        }
+
     </script>
 
 </body>

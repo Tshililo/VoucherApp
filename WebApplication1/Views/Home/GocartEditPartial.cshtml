@@ -33,24 +33,28 @@
 
     <div id="blog" class="site-section">
         <div class="container">
-            <h3>Ride own bike</h3>
+            <h3>Go Cart</h3>
             <br />
             <div class="row">
                 <div class="col-md-8">
+
+                    <label for="Searchbar">Enter Voucher Code (Search)</label>
+                    <input type="text" class="form-control" id="Searchbar">
+
                     <label for="Names">Name and Surname</label>
                     <input type="text" class="form-control" id="Names">
 
 
                     <label for="Email">Email</label>
-                    <input type="text" class="form-control" id="Email">
+                    <input type="text" class="form-control" id="Email" required>
 
 
                     <label for="Contact">Contact No</label>
-                    <input type="text" class="form-control" id="Contact">
+                    <input type="text" class="form-control" id="Contact" required>
 
 
                     <label for="NoOfRides">No of Rides</label>
-                    <input type="number" class="form-control" id="NoOfRides">
+                    <input type="number" class="form-control" id="NoOfRides" required>
 
                     <label for="DateTime">Date</label>
                     <input type="date" class="form-control" id="DateTime">
@@ -65,14 +69,10 @@
                         <option value="Weekend">Weekend</option>
                     </select>
 
-                    <label for="AgeGroupId">Age Group and Prices</label>
+                    <label for="AgeGroupId">Age Group</label>
                     <select id="AgeGroupId" class="form-control" name="AgeGroupId">
-
-                        <option value="Youth">Adult R150</option>
-                        <option value="Elder">Members R120</option>
-                        <option value="Youth"> Kids R100</option>
-                        <option value="Elder">Kids members R70</option>
-
+                        <option value="Youth">Under 12</option>
+                        <option value="Elder">Adults</option>
                     </select>
 
                     <br />
@@ -90,7 +90,8 @@
                         </div>
                         <div class="sidebar-box">
                             <div class="categories">
-                                <h3>Categories</h3>
+
+                                <input type="text" class="form-control" id="Searchbar">
                                 <li><a href="#" onclick="OnROB()">Riding own Bike <span>(10)</span></a></li>
                                 <li><a href="#" onclick="OnGocart()">Gokart Rental <span>(30)</span></a></li>
                                 <li><a href="#">Quad Rental <span>(18)</span></a></li>
@@ -127,11 +128,14 @@
         {
             window.location.href = "/Home/GetEdit?Id=" + "ROB";
         }
-
         function OnGocart() {
             window.location.href = "/Home/GetEdit?Id=" + "Gocart";
         }
- 
+
+        function myFunction()
+        {
+
+        }
         function GenerateVoucher() {
 
             var NamesId = document.getElementById("Names").value;
@@ -148,8 +152,11 @@
             var ee = document.getElementById("OccasionId");
             var OccasionIdValue = ee.options[ee.selectedIndex].value;
 
+            var DateTime = document.getElementById("DateTime").value;
+            
+
             var MyIdInfo = NamesId + "," + Email + "," + Contact + "," + NoOfRides + "," + NoOfPeople
-                + "," + AgeGroupValue + "," + OccasionIdValue + "," + DateTime + "," + "RIDE OWN BIKE" + "";
+                + "," + AgeGroupValue + "," + OccasionIdValue + "," + DateTime + "," + "GoCart" + "";
 
             if (Email == "") {
 
